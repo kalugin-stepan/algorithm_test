@@ -107,9 +107,11 @@ public:
     }
 };
 
+#define img_path "img.png"
+
 int main() {
     BallDetector detector;
-    cv::Mat img = cv::imread("img.png");
+    cv::Mat img = cv::imread(img_path);
     auto rez = detector.detect(img);
     std::cout << rez->size() << std::endl;
     for (auto& p : *rez) {
